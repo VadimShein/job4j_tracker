@@ -2,6 +2,12 @@ language: java
 jdk:
   - openjdk13
 
+services:
+  - postgresql
+
+before_install:
+  - psql -c 'create database tracker;' -U postgres
+
 sudo: false
 
 notifications:
